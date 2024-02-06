@@ -15,9 +15,11 @@
     --ot-input: #02799D;
     --bd-input: rgba(73, 80, 87, 0.3);
     --tt-placeholder:  rgba(73, 80, 87, 0.5);
+    --bg-input: #DCE2E9;
 
     --tt-button: white;
     --bg-button: #02799D;
+    --bg-button-hover: #01475c;
 
     --tt-error: white;
     --bg-error: #F03E3E;
@@ -26,8 +28,11 @@
 
 body{
     background: #040924;
-    font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
+}
+
+body, input, button{
+    font-size: 1.6rem;
 }
 
 .container{
@@ -48,8 +53,109 @@ body{
 .title{
     font-size: 3.2rem;
     line-height: 4rem;
+    color: var(--tt-heading);
+}
+
+form{
+    width: 30rem;
 }
 
 form h1{
     margin-bottom: 3.2rem;
+}
+
+form label{
+    color: var(--tt-label);
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-bottom: .8rem;
+    display: block;
+}
+
+form input{
+    width: 100%;
+    border:.1rem solid var(--bd-input);
+    border-radius: .4rem;
+    padding: 1.6rem;
+    background-color: var(--bg-input);
+}
+
+.input-wrapper + .input-wrapper {
+    margin-top: 1.6rem;
+}
+
+form input:focus {
+    outline: .1rem solid var(--ot-input);
+}
+
+form input::placeholder{
+    color: var(--tt-placeholder);
+}
+
+form button{
+    margin-top: 3.2rem;
+    padding: 1.6rem;
+    width: 100%;
+
+    border: none;
+    border-radius: .4rem;
+    background: var(--bg-button);
+    color: var(--tt-button);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    
+    font-weight: bold;
+    line-height: 2rem;
+
+    cursor: pointer;
+
+    transition: background .3s;
+}
+
+form button:hover{
+    background: var(--bg-button-hover);
+}
+
+
+/* MODAL */
+
+.modal-wrapper.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-wrapper {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+
+    display: grid;
+    place-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal{
+    position: relative;
+}
+
+.modal button{
+    background: none;
+    border: none;
+
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+
+    cursor: pointer;
+
+    transition: transform .3s;
+}
+
+.modal button:hover{
+    transform: scale(1.25);
 }
