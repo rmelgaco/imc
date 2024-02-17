@@ -29,6 +29,7 @@
 body{
     background: #040924;
     font-family: 'Roboto', sans-serif;
+    line-height: 2rem;
 }
 
 body, input, button{
@@ -158,4 +159,29 @@ form button:hover{
 
 .modal button:hover{
     transform: scale(1.25);
+}
+
+/* ALERT-ERROR */
+
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert-error{
+    color: var(--tt-error);
+    font-weight: bold;
+    background: var(--bg-error);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: .8rem 0;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform .5s;
 }
