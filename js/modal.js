@@ -5,11 +5,19 @@ export const modal = {
     btnClose: document.querySelector('.modal button.close'),
 
     open(){
-        modal.wrapper.classList.toggle('open')
+        modal.wrapper.classList.add('open')
     },
     close(){
-        modal.wrapper.classList.toggle('open')
+        modal.wrapper.classList.remove('open')
     }
 }
 
-modal.btnClose.onclick = () =>  modal.close()
+modal.btnClose.onclick = () =>  modal.close();
+
+window.addEventListener('keydown', handleKeyDown)
+
+function handleKeyDown (event) {
+    if (event.key === 'Escape'){
+        modal.close();
+    }
+}
